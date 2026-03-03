@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FowFow Music{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="nav-brand">FowFow Music</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'product_list' %}?type=music">Music</a></li>
+                <li><a href="{% url 'product_list' %}?type=mixes">Mixes</a></li>
+                <li><a href="{% url 'product_list' %}?type=shop">Shop</a></li>
+                <li><a href="{% url 'product_list' %}?type=tuition">Tuition</a></li>
+                <li><a href="{% url 'product_list' %}?type=bookings">Bookings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FowFow Music. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

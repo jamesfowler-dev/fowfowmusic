@@ -26,7 +26,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
     product_type = models.CharField(max_length=20, choices=PRODUCT_TYPES)
-    image = CloudinaryField('images') 
+    image = CloudinaryField('images')
     file = models.FileField(upload_to='product_files/', blank=True)
     soundcloud_url = models.URLField(blank=True)
     is_available = models.BooleanField(default=True)
